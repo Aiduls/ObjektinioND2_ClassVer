@@ -10,16 +10,19 @@ void containerTesting(deque<Studentas>& pabiruciai, deque<Studentas>& protinguci
     int protKiekis, pabirKiekis;
     string failas;
 
-    eilinis.resize(kiekis + 1);
-
+    eilinis.clear();
+    pabiruciai.clear();
+    protinguciai.clear();
     startEvent = std::chrono::system_clock::now();
     try {
-    failas = generuoti(eilinis, kiekis); // process
+        failas = generuoti(eilinis, kiekis); // process
     }
     catch(std::exception & e) {
         cout << "Ivyko klaida deque failo generavime \n";
     }
-
+    eilinis.clear();
+    pabiruciai.clear();
+    protinguciai.clear();
     try {
         start = chrono::system_clock::now();
         nuskaityti(eilinis, kiekis, failas);
@@ -50,8 +53,8 @@ void containerTesting(deque<Studentas>& pabiruciai, deque<Studentas>& protinguci
     string pavadinimasProt = "protinguciai" + to_string(kiekis) + ".txt";
 
     try {
-        isvedimas(pabiruciai, pabirKiekis, pavadinimasPabir);
         isvedimas(protinguciai, protKiekis, pavadinimasProt);
+        isvedimas(pabiruciai, pabirKiekis, pavadinimasPabir);
     }
     catch (std::exception & e) {
         cout << "Ivyko klaida deque failo isvedime \n";
@@ -74,7 +77,7 @@ void containerTesting(list<Studentas>& pabiruciai, list<Studentas>& protinguciai
     int protKiekis, pabirKiekis;
     string failas;
 
-    eilinis.resize(kiekis+1);
+    eilinis.resize(kiekis);
 
     startEvent = std::chrono::system_clock::now();
     try {
@@ -83,7 +86,7 @@ void containerTesting(list<Studentas>& pabiruciai, list<Studentas>& protinguciai
     catch(std::exception & e) {
         cout << "Ivyko klaida list failo generavime \n";
     }
-    
+    eilinis.clear();
     try {
         start = chrono::system_clock::now();
         nuskaityti(eilinis, kiekis, failas);
@@ -100,7 +103,6 @@ void containerTesting(list<Studentas>& pabiruciai, list<Studentas>& protinguciai
         rusiuoti(eilinis, kiekis);
         pabirKiekis = 0;
         protKiekis = 0;
-        //skirstyti(eilinis, kiekis, pabirKiekis, protKiekis, pabiruciai, protinguciai);
         skirstytiList(eilinis, pabiruciai, protinguciai);
         end = std::chrono::system_clock::now();
         elapsed_seconds = end - start;
@@ -131,8 +133,6 @@ void containerTesting(list<Studentas>& pabiruciai, list<Studentas>& protinguciai
 // vector testing 
 void containerTesting(vector<Studentas>& pabiruciai, vector<Studentas>& protinguciai, vector<Studentas>& eilinis, int kiekis) 
 {
-    // duomenu nuskaityma is failu;
-    // studentu rusiavima i dvi grupes / kategorijas;
     eilinis.reserve(kiekis + 1);
     eilinis.resize(kiekis + 1);
     pabiruciai.reserve(kiekis + 1);
@@ -260,42 +260,26 @@ void dalykai(vector<Studentas>& pabiruciai, vector<Studentas>& protinguciai, vec
 }
 void skirstyti(deque<Studentas>& eilinis, int kiekis, int& pabirKiekis, int& protKiekis, deque<Studentas>& pabiruciai, deque<Studentas>& protinguciai)
 {
-    for (int i = 1; i <= kiekis; i++) {
+    for (int i = 0; i < eilinis.size(); i++) {
         if (eilinis[i].egz < 5.00) {
-            pabiruciai[pabirKiekis].vardas = eilinis[i].vardas;
-            pabiruciai[pabirKiekis].pavarde = eilinis[i].pavarde;
-            pabiruciai[pabirKiekis].egz = eilinis[i].egz;
-            pabirKiekis++;
+            pabiruciai.push_back(eilinis[i]);
         }
-        else {
-            protinguciai[protKiekis].vardas = eilinis[i].vardas;
-            protinguciai[protKiekis].pavarde = eilinis[i].pavarde;
-            protinguciai[protKiekis].egz = eilinis[i].egz;
-            protKiekis++;
+        else if (eilinis[i].egz >= 5.00){
+            protinguciai.push_back(eilinis[i]);
         }
     }
 }
 void skirstytiList(list<Studentas>& eilinis, list<Studentas>& pabiruciai, list<Studentas>& protinguciai)
 {
-    std::list<Studentas>::iterator it;
-
-    for (int i = 0; i < eilinis.size(); i++) {
-        it = std::next(eilinis.begin(), i);
-        if (it->egz >= 5) {
-            protinguciai.push_back(*it);
+    for (Studentas l : eilinis) {
+        if (l.egz >= 5.00) {
+            protinguciai.push_back(l);
         }
         else {
-            pabiruciai.push_back(*it);
+            pabiruciai.push_back(l);
         }
     }
 }
-//void skirstytiList(list<Studentas> &eilinis, list<Studentas>& pabiruciai, list<Studentas>& protinguciai)
-//{
-//    list<Studentas>::iterator it = std::find_if(eilinis.begin(), eilinis.end(), compare_5);
-//
-//    pabiruciai.splice(pabiruciai.begin(), eilinis, eilinis.begin(), it);
-//    protinguciai.splice(protinguciai.begin(), eilinis, it, eilinis.end());
-//}
 bool compare_5(const Studentas& v)
 {
     return v.egz == 5.00;
@@ -350,7 +334,6 @@ void rusiuoti(deque<Studentas>& eilinis, int kiekis)
 void rusiuoti(list<Studentas>& eilinis, int kiekis)
 {
     eilinis.sort(maziau);
-    //eilinis.sort([](const Studentas& a, const Studentas& b) { return a.vardas < b.vardas || (a.vardas == b.vardas && a.pavarde < b.pavarde); });
 }
 void rusiuoti(vector<Studentas>& eilinis, int kiekis)
 {
@@ -359,34 +342,22 @@ void rusiuoti(vector<Studentas>& eilinis, int kiekis)
 void nuskaityti(deque<Studentas>& eilinis, int kiekis, string failas)
 {
     ifstream autoIn(failas);
-    eilinis = {}; // nunullinam struktura
-    eilinis.resize(kiekis + 1);
-
-    for (int i = 1; i <= kiekis; i++) {
+    for (int i = 0; i < kiekis; i++) {
+        eilinis.push_back(Studentas());
         autoIn >> eilinis[i].pavarde >> eilinis[i].vardas >> eilinis[i].egz;
     }
 }
 void nuskaityti(list<Studentas>& eilinis, int kiekis, string failas)
 {
     ifstream autoIn(failas);
-    //eilinis = {}; // nunullinam struktura
-    Studentas S;
+    string ignore;
+    autoIn >> ignore >> ignore >> ignore;
 
     for (int i = 0; i < kiekis; i++) {
+        Studentas S;
         autoIn >> S.vardas >> S.pavarde >> S.egz;
+        eilinis.push_back(S);
     }
-    eilinis.push_back(S);
-
-    /*list <Studentas>::iterator it;
-    it = eilinis.begin();
-    int counter = 0;
-    while (it != eilinis.end()) {
-        autoIn>>it->vardas;
-        autoIn >> it->pavarde;
-        autoIn >> it->egz;
-        counter++;
-        it++;
-    }*/
 }
 void nuskaityti(vector<Studentas>& eilinis, int kiekis, string failas)
 {
@@ -401,26 +372,33 @@ void nuskaityti(vector<Studentas>& eilinis, int kiekis, string failas)
 }
 string generuoti(deque<Studentas> eilinis, int kiekis)
 {
+    int ndKiekis = 3;
     eilinis = {}; // nunullinam struktura
-    eilinis.resize(kiekis + 1);
+    eilinis.resize(kiekis);
     random_device rd;
     mt19937 mt(rd());
     uniform_real_distribution<double> balai(1.0, 10.0);
-    double egzas;
+    double vidurkis = 0;
+    int iCounter = 0;
     string outFileName = "autoOut" + to_string(kiekis) + ".txt";
     ofstream autoOut(outFileName);
-    for (int i = 1; i <= kiekis; i++) {
-        eilinis[i].vardas = "Vardas" + to_string(i);
-        eilinis[i].pavarde = "Pavarde" + to_string(i);
-        egzas = balai(mt);
-        eilinis[i].egz = egzas;
+    for (int i = 0; i < kiekis; i++) {
+        for (int j = 0; j < ndKiekis; j++) {
+            vidurkis += balai(mt);
+        }
+        vidurkis /= 3.00;
+        iCounter++;
+        eilinis[i].vardas = "Vardas" + to_string(iCounter);
+        eilinis[i].pavarde = "Pavarde" + to_string(iCounter);
+        eilinis[i].egz = vidurkis;
         autoOut << left << setw(20) << eilinis[i].pavarde << setw(20) << eilinis[i].vardas << setw(20) << setprecision(3) << eilinis[i].egz << endl;
+        vidurkis = 0;
     }
     return outFileName;
 }
 string generuoti(list<Studentas> eilinis, int kiekis)
 {
-    int ndKiekis = 3;
+    int ndKiekis = 3, iCounter = 0;
     eilinis = {}; // nunullinam struktura
     random_device rd;
     mt19937 mt(rd());
@@ -432,44 +410,39 @@ string generuoti(list<Studentas> eilinis, int kiekis)
     list <Studentas>::iterator it;
     it = eilinis.begin();
     autoOut << left << setw(20) << "Vardas" << setw(20) << "Pavarde" << setw(5) << "Vidurkis" << endl;
-    //autoOut << left << "----------------------------------------------------------" << endl;
-    for (int i = 1; i <= kiekis; i++) {
+    for (int i = 0; i < kiekis; i++) {
         for (int j = 0; j < ndKiekis; j++) {
             vidurkis += balai(mt);
         }
         vidurkis /= 3.00;
-        autoOut << left << setw(20) << "Vardas"+to_string(i) << setw(20) << "Pavarde" + to_string(i) << setw(5) << setprecision(3) <<  vidurkis <<  endl;
+        iCounter++;
+        autoOut << left << setw(20) << "Vardas"+to_string(iCounter) << setw(20) << "Pavarde" + to_string(iCounter) << setw(5) << setprecision(3) <<  vidurkis <<  endl;
+        vidurkis = 0;
     }
-    //while (it != eilinis.end()) {
-    //    egzas = balai(mt);
-    //    it->vardas = "vardas" + to_string(counter);
-    //    it->pavarde = "pavarde" + to_string(counter);
-    //    it->egz = egzas;
-
-    //    autoout << left << setw(20) << it->vardas << setw(20) << it->pavarde << setw(20) << setprecision(3) << it->egz << endl;
-    //    counter++;
-    //    it++;
-    //}
-
     return outFileName;
 }
 string generuoti(vector<Studentas>& eilinis, int kiekis)
 {
+    int ndKiekis = 3;
     eilinis = {}; // nunullinam struktura
     eilinis.reserve(kiekis+1);
     eilinis.resize(kiekis+1);
     random_device rd;
     mt19937 mt(rd());
     uniform_real_distribution<double> balai(1.0, 10.0);
-    double egzas;
+    double vidurkis = 0;
     string outFileName = "autoOut" + to_string(kiekis)+".txt";
     ofstream autoOut(outFileName);
     for (int i = 1; i <= kiekis; i++) {
+        for (int j = 0; j < ndKiekis; j++) {
+            vidurkis += balai(mt);
+        }
+        vidurkis /= 3.00;
         eilinis[i].vardas = "Vardas" + to_string(i);
         eilinis[i].pavarde = "Pavarde" + to_string(i);
-        egzas = balai(mt);
-        eilinis[i].egz = egzas;
+        eilinis[i].egz = vidurkis;
         autoOut << left << setw(20) << eilinis[i].pavarde << setw(20) << eilinis[i].vardas << setw(20) << setprecision(3) << eilinis[i].egz << endl;
+        vidurkis = 0;
     }
     return outFileName;
 }
@@ -486,9 +459,11 @@ void isvedimas(deque<Studentas> dekas, int kiekis, string failoPav = "rezultatai
     ofstream offile(failoPav);
     offile << "Pavarde             Vardas              Galutinis (egz.)\n";
     offile << "--------------------------------------------------------\n";
-    for (int i = 0; i < kiekis; i++) {
-        offile << left << setw(20) << dekas[i].pavarde << setw(20) << dekas[i].vardas << setw(20) << setprecision(3) << dekas[i].egz << endl;
+
+    for (Studentas d : dekas) {
+        offile << left << setw(20) << d.vardas << setw(20) << d.pavarde << setw(20) << setprecision(3) << d.egz << endl;
     }
+
 }
 void isvedimas(list<Studentas>& listas, int kiekis, string failoPav = "rezultatai.txt") // isvedimas auto sugeneruotiems
 {
@@ -496,19 +471,9 @@ void isvedimas(list<Studentas>& listas, int kiekis, string failoPav = "rezultata
     offile << "Pavarde             Vardas              Galutinis (egz.)\n";
     offile << "--------------------------------------------------------\n";
 
-    list <Studentas>::iterator it;
-    //it = listas.begin();
-    it = std::next(listas.begin(), 0);
-    //int counter = 1;
-    for (int i = 0; i < listas.size(); i++) {
-        offile << left << setw(20) << it->vardas << setw(20) << it->pavarde << setw(20) << setprecision(3) << it->egz << endl;
-        it++;
+    for (Studentas l : listas) {
+        offile << left << setw(20) << l.vardas << setw(20) << l.pavarde << setw(20) << setprecision(3) << l.egz << endl;
     }
-   /* while (it != listas.end()) {
-        offile << left << setw(20) << it->vardas << setw(20) << it->pavarde << setw(20) << setprecision(3) << it->egz << endl;
-        counter++;
-        it++;
-    }*/
 }
 void isvedimas(vector<Studentas> vektorius, int kiekis, string failoPav= "rezultatai.txt") // isvedimas auto sugeneruotiems
 {
@@ -528,8 +493,6 @@ void isvedimas(vector<Studentas>& eilinis)
         for (int i = 0; i < eilinis.size(); i++) {
             offile << left << setw(20) << eilinis[i].pavarde << setw(20) << eilinis[i].vardas << setw(20) << setprecision(3) << eilinis[i].galVid << setw(20) << setprecision(2) << eilinis[i].galMed << endl;
         }
-        
-        //cout << left << setw(20) << pavarde << setw(20) << vardas << setw(20) << setprecision(3) << vid << setw(20) << setprecision(2) << med << endl; 
 }
 double vidurkis(vector<double>& nd, double egz)
 {
@@ -633,7 +596,7 @@ void symbolCheck(int& skaicius, bool ok, bool balas)
         }
     }
 }
-double vectorSymbolCheck() // PAKEISTI KAD TIKTU VEKTORIUI
+double vectorSymbolCheck()
 {
     double skaicius;
     bool ok = false;
@@ -644,7 +607,6 @@ double vectorSymbolCheck() // PAKEISTI KAD TIKTU VEKTORIUI
         cin.ignore(256, '\n');
         cin >> skaicius;
     }
-
     while (!ok) {
         if (cin.fail()) vectorSymbolCheck();
         if (skaicius >= 0.0 && skaicius <= 10.0)
@@ -656,7 +618,6 @@ double vectorSymbolCheck() // PAKEISTI KAD TIKTU VEKTORIUI
             cin >> skaicius;
         }
     }
-
     return skaicius;
 }
 void boolCheck(bool& check)
@@ -681,6 +642,5 @@ void boolCheck(bool& check)
             }
             else cout << "\nIveskite 0 arba 1: ";
         }
-
     }
 }
