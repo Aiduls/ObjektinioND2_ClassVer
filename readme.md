@@ -1,4 +1,18 @@
 # Programa, skirta skaičiuoti vidurkį bei medianą
+### Diegimo instrukcija (UNIX platformoms):
+
+1. Parsisiųskite naujausią release'ą
+
+2. Terminale parašykite komandą `make`
+
+3. Jei naujai sukurtas Application paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju - komanda `chmod a+x hello`
+
+4. Paleiskite programą komanda `./Application` arba rankiniu būdu.
+
+5. Norėdami išvalyti sukurtus failus naudokite komandą `make clean`
+
+   Jei diegimas nepavyksta ar programą norite pasileisti ant Windows platformos, po pirmo punkto reiktų susidėti ND2_1.0.cpp, func.cpp ir Header.h failus į naudojamo IDE projektą (rekomenduojama Visual Studio 2019, x64 versija) ir pasileisti taip.
+
 ### Versijų registras:
 
 ### v0.1:
@@ -50,3 +64,9 @@
 
 1. Pataisyta 0.5 versija. Dabar programa kokybiškai apdoroja duomenis ir list, ir deque sąrašuose.
 2. Pridėtas programos procesų veikimo laiko screenshot'as - konsolev0.5.png.
+
+### v1.0
+
+1. Procesams vykdyti naudojamos dvi strategijos: iš bendro konteinerio išskirstyti į du papildomus ir iš bendro konteinerio išrinkti prastesnius, o bendrame palikti geresnius. Visi šie skirtumai laiko ir atminties atžvilgiu aprašyti additionalData/usageData.txt faile, o papildomos nuotraukos su rezultatais yra additionalData aplanke.
+2. Vektorių konteineriuose skirstant studentus padidintas efektyvumas naudojant find_if() ir iteratorius.
+3. Pridėtas Makefile, skirtas UNIX sistemoms.

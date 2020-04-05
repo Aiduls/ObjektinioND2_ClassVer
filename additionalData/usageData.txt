@@ -1,0 +1,24 @@
+Aprašyti strategijų veikimo laikai ir procesų atmintis (process memory) skaičiuojami kiekvieno proceso atskirai, 
+o programai kuriant visus konteinerius per vieną runtime'ą  - nuotraukose.
+
+1 strategijos naudingumas: 
+	greičiai (10mln duomenų) (skliausteliuose nuskaitymas/skaidymas): 
+		vector - 82,38s (09,99/3,18) - 4,1GB
+		list   - 89,44s (10,68/8,78) - 2,8GB
+		deque  - 87,36s (11,44/4,59) - 3,2GB
+	bendras sunaudotas atminties kiekis(visi konteineriai per vieną runtime'ą) - 9,6GB
+
+	Pilni duomenys - test1.png
+
+2 strategijos naudingumas:
+	greičiai (10mln duomenų) (skliausteliuose nuskaitymas/skaidymas): 
+		vector - 81.18s (10,00/2,5)  - 2,9GB
+		list   - 87.50s (10.07/7.23) - 1.4GB
+		deque  - 87.94s (11.27/4.47) - 3.2GB
+	bendras sunaudotas atminties kiekis(visi konteineriai per vieną runtime'ą) - 6,3GB
+
+	Pilni duomenys - test2.png
+
+Laiko atžvilgiu rezultatai arba panašūs, arba greitesni naudojant dviejų konteinerių strategiją. Atminties atveju geresni yra antrosios strategijos rezultatai.
+
+Naudojant skirstytiv3() funkciją su find_if, iteratoriumi, vektoriaus kopija ir erase(), proceso veiksmingumas laiko prasme buvo panašus kaip įprastai (foto - testVectorTimes.png), tačiau užimė dar mažiau apdorojančios atminties - 2,2GB.
