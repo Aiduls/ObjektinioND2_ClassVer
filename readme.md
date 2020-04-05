@@ -1,4 +1,4 @@
-# Programa, skirta skaičiuoti vidurkį bei medianą
+# Studentų rezultatų skaičiavimo programa
 ### Diegimo instrukcija (UNIX platformoms):
 
 1. Parsisiųskite naujausią release'ą
