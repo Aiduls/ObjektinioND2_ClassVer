@@ -1,15 +1,10 @@
-CC=g++
+App: ND2_v1.1.o func.o
+	g++ ND2_v1.1.o func.o -o3 App
 
-all: Application
-	
-Application: main.o func.o
-	$(CC) ND2_v1.0.o func.o -o Application
-
-main.o: ND2_v1.0.cpp Header.h
-	$(CC) -c ND2_v1.0.cpp Header.h
+ND2_v1.1.o: ND2_v1.1.cpp Header.h
+	g++ -c ND2_v1.1.cpp Header.h
 
 func.o: func.cpp Header.h
-	$(CC) -c func.cpp Header.h
+	g++ -c func.cpp Header.h
 
-clean:
-	rm *.o *.gch Application
+clean: rm *.o *.gch App

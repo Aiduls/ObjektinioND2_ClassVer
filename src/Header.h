@@ -22,6 +22,33 @@ struct Studentas {
     double egz = 0, galVid = 0, galMed = 0;
 };
 
+class StudentasClass {
+private:
+    string vardas;
+    string pavarde;
+    int ndKiekis;
+    vector<double> ND;
+    int egz;
+    double vidurkis, galutinis;
+
+public:
+    StudentasClass() : egz(0) { }  // default konstruktorius
+
+    void setValues(std::string vardas, std::string pavarde, double vidurkis, double egz) { // set'eris
+        this->vardas = vardas;
+        this->pavarde = pavarde;
+        this->vidurkis = vidurkis;
+        this->egz = egz;
+    }
+
+    void setGalutinis() { // set'eris
+        this->galutinis = 0.4 * this->vidurkis + 0.6 * this-> egz;
+    }
+    string getVardas() const { return vardas; }  // get'eris
+    string getPavarde() const { return pavarde; }  // get'eris
+    double getGalutinis() const { return galutinis; }  // get'eris
+};
+
 void digitCheck(string& stringas, bool check);
 void symbolCheck(double& skaicius, bool check, bool balas);
 void symbolCheck(int& skaicius, bool check, bool balas);
@@ -55,6 +82,22 @@ void skirstytiv2(vector<Studentas>& eilinis, vector<Studentas>& pabiruciai);
 void skirstytiv2(list<Studentas>& eilinis, list<Studentas>& pabiruciai);
 void skirstytiv2(deque<Studentas>& eilinis, deque<Studentas>& pabiruciai);
 void skirstytiv3(vector<Studentas>& eilinis, vector<Studentas>& pabiruciai);
+
+// nuo v1.1
+void containerTestingVector_Class(vector<StudentasClass>& pabiruciai, vector<StudentasClass>& eilinis, int kiekis);
+string generuoti_ForClass(int kiekis);
+void nuskaityti_ForClass(vector<StudentasClass>& eilinis, int kiekis, string failas);
+void rusiuoti_ForClass(vector<StudentasClass>& eilinis);
+void skirstytiv3_ForClass(vector<StudentasClass>& eilinis, vector<StudentasClass>& pabiruciai);
+void isvedimas_ForClass(vector<Studentas> vektorius, string failoPav);
+void calculateFinal_ForClass(vector<StudentasClass>& eilinis, int kiekis);
+void isvedimas_ForClass(vector<StudentasClass> vektorius, string failoPav);
+bool compare_5_ForClass(const StudentasClass& v);
+bool maziau_ForClass(const StudentasClass& a, const StudentasClass& b);
+
+
+
+
 
 
 

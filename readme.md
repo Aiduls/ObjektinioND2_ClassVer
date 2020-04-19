@@ -1,17 +1,25 @@
 # Studentų rezultatų skaičiavimo programa
-### Diegimo instrukcija (UNIX platformoms):
+
+### Diegimo instrukcija (Windows/Linux platformoms):
 
 1. Parsisiųskite naujausią release'ą
 
-2. Terminale parašykite komandą `make`
+2. Linux OS:
 
-3. Jei naujai sukurtas Application paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju - komanda `chmod a+x hello`
+   1. Terminale parašykite komandą `make`
+   2. Jei naujai sukurtas Application paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju - komanda `chmod a+x hello`
 
-4. Paleiskite programą komanda `./Application` arba rankiniu būdu.
+3. Windows OS, naudojant MinGW aplinką:
 
-5. Norėdami išvalyti sukurtus failus naudokite komandą `make clean`
+   1. Terminale parašykite komandą ` mingw32-make `
 
-   Jei diegimas nepavyksta ar programą norite pasileisti ant Windows platformos, po pirmo punkto reiktų susidėti ND2_1.0.cpp, func.cpp ir Header.h failus į naudojamo IDE projektą (rekomenduojama Visual Studio 2019, x64 versija) ir pasileisti taip.
+4. Paleiskite programą komanda `./App` arba rankiniu būdu.
+
+5. Norėdami išvalyti sukurtus failus naudokite komandą `make clean` (Linux OS) arba `mingw32-make clean` (Windows OS naudojant MinGW aplinką).
+
+   Jei diegimas nepavyksta, po pirmo punkto reiktų susidėti naujausią main failą (ND2_x.x.cpp), func.cpp ir Header.h failus į naudojamo IDE projektą (rekomenduojama Visual Studio 2019, x64 versija) ir pasileisti taip.
+
+
 
 ### Versijų registras:
 
@@ -34,7 +42,7 @@
 ### v0.3
 
 1. Naudojami exceptionai, try ir catch metodai.
-2. Programa suskirstyta į kelis failus: ND2 v0.3.cpp, kuris atlieka pagrindines funkcijas, funkcijų faila func.cpp ir antraščių faila Header.h .
+2. Programa suskirstyta į kelis failus: ND2 v0.3.cpp, kuris atlieka pagrindines funkcijas, funkcijų faila func.cpp ir antraščių failą Header.h .
 
 ### v0.4
 
@@ -70,3 +78,60 @@
 1. Procesams vykdyti naudojamos dvi strategijos: iš bendro konteinerio išskirstyti į du papildomus ir iš bendro konteinerio išrinkti prastesnius, o bendrame palikti geresnius. Visi šie skirtumai laiko ir atminties atžvilgiu aprašyti additionalData/usageData.txt faile, o papildomos nuotraukos su rezultatais yra additionalData aplanke.
 2. Vektorių konteineriuose skirstant studentus padidintas efektyvumas naudojant find_if() ir iteratorius.
 3. Pridėtas Makefile, skirtas UNIX sistemoms.
+
+##### Diegimo instrukcija (UNIX platformoms):
+
+1. Parsisiųskite naujausią release'ą
+
+2. Terminale parašykite komandą `make`
+
+3. Jei naujai sukurtas Application paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju - komanda `chmod a+x hello`
+
+4. Paleiskite programą komanda `./Application` arba rankiniu būdu.
+
+5. Norėdami išvalyti sukurtus failus naudokite komandą `make clean`
+
+   Jei diegimas nepavyksta ar programą norite pasileisti ant Windows platformos, po pirmo punkto reiktų susidėti ND2_1.0.cpp, func.cpp ir Header.h failus į naudojamo IDE projektą (rekomenduojama Visual Studio 2019, x64 versija) ir pasileisti taip.
+
+**-----------------------**
+
+### v1.1
+
+1. Pridėta galimybė atlikti skaičiavimus vector konteineryje su klasėmis, o ne struktūromis.
+
+2. Programos veikimo laiko palyginimas tarp struktūrų vektorių ir klasių vektorių (kiekiai: 100k ir 1M duomenų):
+
+   | Konteineriai \ Duomenų kiekis | 100 k | 1M    |
+   | ----------------------------- | :---- | ----- |
+   | Klasės                        | 0,92s | 9,09s |
+   | Struktūros                    | 0,82s | 8,17s |
+
+3. Naujosios programos veikimo laikai (sekundėmis) naudojant skirtingas optimizacijas:
+
+   | Optimizavimo flag'as \ duomenų kiekis | 100 k | 1M   |
+   | ------------------------------------- | ----- | ---- |
+   | /O1                                   | 0,89  | 8,77 |
+   | /O2                                   | 0,9   | 8,62 |
+   | /Ox                                   | 0,88  | 8,51 |
+
+   Papildomi nustatymai, naudoti visuose bandymuose: Release konfigūracija bei x64 platforma.
+
+
+##### Diegimo instrukcija (Windows/Unix platformoms):
+
+1. Parsisiųskite naujausią release'ą
+
+2. Linux OS:
+
+   1. Terminale parašykite komandą `make`
+   2. Jei naujai sukurtas Application paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju - komanda `chmod a+x hello`
+
+3. Windows OS, naudojant MinGW aplinką:
+
+   1. Terminale parašykite komandą ` mingw32-make `
+
+4. Paleiskite programą komanda `./App` arba rankiniu būdu.
+
+5. Norėdami išvalyti sukurtus failus naudokite komandą `make clean` (Unix OS) arba `mingw32-make clean` (Windows OS naudojant MinGW aplinką).
+
+   Jei diegimas nepavyksta, po pirmo punkto reiktų susidėti naujausią main failą (ND2_x.x.cpp), func.cpp ir Header.h failus į naudojamo IDE projektą (rekomenduojama Visual Studio 2019, x64 versija) ir pasileisti taip.
