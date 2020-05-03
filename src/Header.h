@@ -32,30 +32,31 @@ private:
     double vidurkis, galutinis;
 
 public:
-    StudentasClass() : egz(0) { }  // default konstruktorius
+    // konstruktoriai
+    StudentasClass() { 
+        setValues("", "", 0, 0); 
+    }
+    
+    // destruktoriai
+    ~StudentasClass() {}
 
-    void setValues(std::string vardas, std::string pavarde, double vidurkis, double egz) { // set'eris
+    // setteriai
+    void setValues(std::string vardas, std::string pavarde, double vidurkis, double egz) {
         this->vardas = vardas;
         this->pavarde = pavarde;
         this->vidurkis = vidurkis;
         this->egz = egz;
     }
-
     void setGalutinis() { // set'eris
         this->galutinis = 0.4 * this->vidurkis + 0.6 * this-> egz;
     }
-    string getVardas() const { return vardas; }  // get'eris
-    string getPavarde() const { return pavarde; }  // get'eris
-    double getGalutinis() const { return galutinis; }  // get'eris
+
+    // getteriai
+    string getVardas() const { return vardas; }  
+    string getPavarde() const { return pavarde; }  
+    double getGalutinis() const { return galutinis; }  
 };
 
-void digitCheck(string& stringas, bool check);
-void symbolCheck(double& skaicius, bool check, bool balas);
-void symbolCheck(int& skaicius, bool check, bool balas);
-void boolCheck(bool& arMediana);
-double vectorSymbolCheck();
-double mediana(vector<double>& nd);
-double vidurkis(vector<double>& nd, double egz);
 void isvedimas(vector<Studentas>& eilinis);
 bool compareByLength(const Studentas& a, const Studentas& b);
 string generuoti(vector<Studentas>& eilinis, int kiekis);
@@ -94,6 +95,9 @@ void calculateFinal_ForClass(vector<StudentasClass>& eilinis, int kiekis);
 void isvedimas_ForClass(vector<StudentasClass> vektorius, string failoPav);
 bool compare_5_ForClass(const StudentasClass& v);
 bool maziau_ForClass(const StudentasClass& a, const StudentasClass& b);
+
+std::ostream& operator<<(std::ostream& offile, vector<StudentasClass>& vektorius);
+
 
 
 

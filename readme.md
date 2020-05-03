@@ -135,3 +135,8 @@
 5. Norėdami išvalyti sukurtus failus naudokite komandą `make clean` (Unix OS) arba `mingw32-make clean` (Windows OS naudojant MinGW aplinką).
 
    Jei diegimas nepavyksta, po pirmo punkto reiktų susidėti naujausią main failą (ND2_x.x.cpp), func.cpp ir Header.h failus į naudojamo IDE projektą (rekomenduojama Visual Studio 2019, x64 versija) ir pasileisti taip.
+
+### v1.2
+
+1. Klasėje pridėtas pagrindinis konstruktorius ir destruktorius
+2. Pridėtas naudingas operatorių overloadinimas (<< - rezultatų išvedimo operatorius).
