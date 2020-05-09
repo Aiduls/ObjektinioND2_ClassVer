@@ -22,10 +22,17 @@ struct Studentas {
     double egz = 0, galVid = 0, galMed = 0;
 };
 
-class StudentasClass {
-private:
+class Zmogus {
+protected:
     string vardas;
     string pavarde;
+public:
+    virtual string getVardas() = 0;
+    virtual string getPavarde() = 0;
+};
+
+class StudentasClass: public Zmogus {
+private:
     int ndKiekis;
     vector<double> ND;
     int egz;
@@ -40,6 +47,8 @@ public:
     // destruktoriai
     ~StudentasClass() {}
 
+    StudentasClass& operatorEQUALS(const StudentasClass& gc1);
+
     // setteriai
     void setValues(std::string vardas, std::string pavarde, double vidurkis, double egz) {
         this->vardas = vardas;
@@ -51,9 +60,9 @@ public:
         this->galutinis = 0.4 * this->vidurkis + 0.6 * this-> egz;
     }
 
-    // getteriai
-    string getVardas() const { return vardas; }  
-    string getPavarde() const { return pavarde; }  
+    // getteriai  
+    string getVardas() override { return vardas; }
+    string getPavarde() override { return pavarde; }
     double getGalutinis() const { return galutinis; }  
 };
 

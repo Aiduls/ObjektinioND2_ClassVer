@@ -1,143 +1,143 @@
 #include "Header.h"
 
-// deque testing
-//void containerTesting(deque<Studentas>& pabiruciai, deque<Studentas>& protinguciai, deque<Studentas>& eilinis, int kiekis)
-//{
-//
-//    chrono::time_point<chrono::system_clock> start, end;
-//    chrono::time_point<chrono::system_clock> startEvent, endEvent;
-//    chrono::duration<double> elapsed_seconds;
-//
-//    int protKiekis, pabirKiekis;
-//    string failas;
-//
-//    eilinis.clear();
-//    pabiruciai.clear();
-//    protinguciai.clear();
-//    startEvent = std::chrono::system_clock::now();
-//    try {
-//        failas = generuoti(eilinis, kiekis); // process
-//    }
-//    catch(std::exception & e) {
-//        cout << "Ivyko klaida deque failo generavime \n";
-//    }
-//    eilinis.clear();
-//    pabiruciai.clear();
-//    protinguciai.clear();
-//    try {
-//        start = chrono::system_clock::now();
-//        nuskaityti(eilinis, kiekis, failas);
-//        end = std::chrono::system_clock::now();
-//        elapsed_seconds = end - start;
-//        cout << "Failo su " << kiekis << " duomenu nuskaitymas uztruko: " << elapsed_seconds.count() << "s\n";
-//    }
-//    catch (std::exception & e) {
-//        cout << "Ivyko klaida deque failo nuskaityme \n";
-//    }
-//
-//    try {
-//        start = chrono::system_clock::now();
-//        rusiuoti(eilinis);
-//        //skirstyti(eilinis, pabiruciai, protinguciai);
-//        skirstytiv2(eilinis, pabiruciai);
-//        end = std::chrono::system_clock::now();
-//        elapsed_seconds = end - start;
-//        cout << "Failo su " << kiekis << " duomenu rusiavimas ir skirstymas i protingus ir pabirucius uztruko: " << elapsed_seconds.count() << "s\n";
-//    }
-//    catch (std::exception & e) {
-//        cout << "Ivyko klaida deque failo rusiavime/skirstyme \n";
-//    }
-//    
-//
-//    string pavadinimasPabir = "pabiruciai" + to_string(kiekis) + ".txt";
-//    string pavadinimasProt = "protinguciai" + to_string(kiekis) + ".txt";
-//
-//    try {
-//        // 1 strat.
-//        //isvedimas(protinguciai, pavadinimasProt);
-//        //isvedimas(pabiruciai, pavadinimasPabir);
-//
-//        // 2 strat.
-//        isvedimas(pabiruciai, pavadinimasProt);
-//        isvedimas(eilinis, pavadinimasProt);
-//    }
-//    catch (std::exception & e) {
-//        cout << "Ivyko klaida deque failo isvedime \n";
-//    }
-//
-//
-//    endEvent = std::chrono::system_clock::now();
-//    elapsed_seconds = endEvent - startEvent;
-//    cout << "Failo su " << kiekis << " duomenu procesai uztruko: " << elapsed_seconds.count() << "s\n\n";
-//}
+ //deque testing
+void containerTesting(deque<Studentas>& pabiruciai, deque<Studentas>& protinguciai, deque<Studentas>& eilinis, int kiekis)
+{
 
-// list testing
-//void containerTesting(list<Studentas>& pabiruciai, list<Studentas>& protinguciai, list<Studentas>& eilinis, int kiekis)
-//{
-//
-//    chrono::time_point<chrono::system_clock> start, end;
-//    chrono::time_point<chrono::system_clock> startEvent, endEvent;
-//    chrono::duration<double> elapsed_seconds;
-//
-//    int protKiekis, pabirKiekis;
-//    string failas;
-//
-//    eilinis.resize(kiekis);
-//
-//    startEvent = std::chrono::system_clock::now();
-//    try {
-//        failas = generuoti(eilinis, kiekis); // process
-//    }
-//    catch(std::exception & e) {
-//        cout << "Ivyko klaida list failo generavime \n";
-//    }
-//    eilinis.clear();
-//    try {
-//        start = chrono::system_clock::now();
-//        nuskaityti(eilinis, kiekis, failas);
-//        end = std::chrono::system_clock::now();
-//        elapsed_seconds = end - start;
-//        cout << "Failo su " << kiekis << " duomenu nuskaitymas uztruko: " << elapsed_seconds.count() << "s\n";
-//    }
-//    catch (std::exception & e) {
-//        cout << "Ivyko klaida list failo nuskaityme \n";
-//    }
-//
-//    try {
-//        start = chrono::system_clock::now();
-//        rusiuoti(eilinis);
-//        //skirstyti(eilinis, pabiruciai, protinguciai);
-//        skirstytiv2(eilinis, pabiruciai);
-//        end = std::chrono::system_clock::now();
-//        elapsed_seconds = end - start;
-//        cout << "Failo su " << kiekis << " duomenu rusiavimas ir skirstymas i protingus ir pabirucius uztruko: " << elapsed_seconds.count() << "s\n";
-//    }
-//    catch (std::exception & e) {
-//        cout << "Ivyko klaida list failo rusiavime ir skaityme \n";
-//    }
-//
-//
-//    string pavadinimasPabir = "pabiruciai" + to_string(kiekis) + ".txt";
-//    string pavadinimasProt = "protinguciai" + to_string(kiekis) + ".txt";
-//
-//    try {
-//        // 1-oji strategija
-//       // isvedimas(pabiruciai, pavadinimasPabir);
-//       // isvedimas(protinguciai, pavadinimasProt);
-//
-//        // 2-oji strategija 
-//        isvedimas(pabiruciai, pavadinimasPabir);
-//        isvedimas(eilinis, pavadinimasProt);
-//    }
-//    catch (std::exception & e) {
-//        cout << "Ivyko klaida list failo rusiavime ir skaityme \n";
-//    }
-//
-//
-//    endEvent = std::chrono::system_clock::now();
-//    elapsed_seconds = endEvent - startEvent;
-//    cout << "Failo su " << kiekis << " duomenu procesai uztruko: " << elapsed_seconds.count() << "s\n\n";
-//}
+    chrono::time_point<chrono::system_clock> start, end;
+    chrono::time_point<chrono::system_clock> startEvent, endEvent;
+    chrono::duration<double> elapsed_seconds;
+
+    int protKiekis, pabirKiekis;
+    string failas;
+
+    eilinis.clear();
+    pabiruciai.clear();
+    protinguciai.clear();
+    startEvent = std::chrono::system_clock::now();
+    try {
+        failas = generuoti(eilinis, kiekis); // process
+    }
+    catch(std::exception & e) {
+        cout << "Ivyko klaida deque failo generavime \n";
+    }
+    eilinis.clear();
+    pabiruciai.clear();
+    protinguciai.clear();
+    try {
+        start = chrono::system_clock::now();
+        nuskaityti(eilinis, kiekis, failas);
+        end = std::chrono::system_clock::now();
+        elapsed_seconds = end - start;
+        cout << "Failo su " << kiekis << " duomenu nuskaitymas uztruko: " << elapsed_seconds.count() << "s\n";
+    }
+    catch (std::exception & e) {
+        cout << "Ivyko klaida deque failo nuskaityme \n";
+    }
+
+    try {
+        start = chrono::system_clock::now();
+        rusiuoti(eilinis);
+        //skirstyti(eilinis, pabiruciai, protinguciai);
+        skirstytiv2(eilinis, pabiruciai);
+        end = std::chrono::system_clock::now();
+        elapsed_seconds = end - start;
+        cout << "Failo su " << kiekis << " duomenu rusiavimas ir skirstymas i protingus ir pabirucius uztruko: " << elapsed_seconds.count() << "s\n";
+    }
+    catch (std::exception & e) {
+        cout << "Ivyko klaida deque failo rusiavime/skirstyme \n";
+    }
+    
+
+    string pavadinimasPabir = "pabiruciai" + to_string(kiekis) + ".txt";
+    string pavadinimasProt = "protinguciai" + to_string(kiekis) + ".txt";
+
+    try {
+        // 1 strat.
+        //isvedimas(protinguciai, pavadinimasProt);
+        //isvedimas(pabiruciai, pavadinimasPabir);
+
+        // 2 strat.
+        isvedimas(pabiruciai, pavadinimasProt);
+        isvedimas(eilinis, pavadinimasProt);
+    }
+    catch (std::exception & e) {
+        cout << "Ivyko klaida deque failo isvedime \n";
+    }
+
+
+    endEvent = std::chrono::system_clock::now();
+    elapsed_seconds = endEvent - startEvent;
+    cout << "Failo su " << kiekis << " duomenu procesai uztruko: " << elapsed_seconds.count() << "s\n\n";
+}
+
+ //list testing
+void containerTesting(list<Studentas>& pabiruciai, list<Studentas>& protinguciai, list<Studentas>& eilinis, int kiekis)
+{
+
+    chrono::time_point<chrono::system_clock> start, end;
+    chrono::time_point<chrono::system_clock> startEvent, endEvent;
+    chrono::duration<double> elapsed_seconds;
+
+    int protKiekis, pabirKiekis;
+    string failas;
+
+    eilinis.resize(kiekis);
+
+    startEvent = std::chrono::system_clock::now();
+    try {
+        failas = generuoti(eilinis, kiekis); // process
+    }
+    catch(std::exception & e) {
+        cout << "Ivyko klaida list failo generavime \n";
+    }
+    eilinis.clear();
+    try {
+        start = chrono::system_clock::now();
+        nuskaityti(eilinis, kiekis, failas);
+        end = std::chrono::system_clock::now();
+        elapsed_seconds = end - start;
+        cout << "Failo su " << kiekis << " duomenu nuskaitymas uztruko: " << elapsed_seconds.count() << "s\n";
+    }
+    catch (std::exception & e) {
+        cout << "Ivyko klaida list failo nuskaityme \n";
+    }
+
+    try {
+        start = chrono::system_clock::now();
+        rusiuoti(eilinis);
+        //skirstyti(eilinis, pabiruciai, protinguciai);
+        skirstytiv2(eilinis, pabiruciai);
+        end = std::chrono::system_clock::now();
+        elapsed_seconds = end - start;
+        cout << "Failo su " << kiekis << " duomenu rusiavimas ir skirstymas i protingus ir pabirucius uztruko: " << elapsed_seconds.count() << "s\n";
+    }
+    catch (std::exception & e) {
+        cout << "Ivyko klaida list failo rusiavime ir skaityme \n";
+    }
+
+
+    string pavadinimasPabir = "pabiruciai" + to_string(kiekis) + ".txt";
+    string pavadinimasProt = "protinguciai" + to_string(kiekis) + ".txt";
+
+    try {
+        // 1-oji strategija
+       // isvedimas(pabiruciai, pavadinimasPabir);
+       // isvedimas(protinguciai, pavadinimasProt);
+
+        // 2-oji strategija 
+        isvedimas(pabiruciai, pavadinimasPabir);
+        isvedimas(eilinis, pavadinimasProt);
+    }
+    catch (std::exception & e) {
+        cout << "Ivyko klaida list failo rusiavime ir skaityme \n";
+    }
+
+
+    endEvent = std::chrono::system_clock::now();
+    elapsed_seconds = endEvent - startEvent;
+    cout << "Failo su " << kiekis << " duomenu procesai uztruko: " << elapsed_seconds.count() << "s\n\n";
+}
 
 // vector testing 
 void containerTesting(vector<Studentas>& pabiruciai, vector<Studentas>& protinguciai, vector<Studentas>& eilinis, int kiekis) 
@@ -666,4 +666,13 @@ void isvedimas(vector<Studentas>& eilinis)
         for (int i = 0; i < eilinis.size(); i++) {
             offile << left << setw(20) << eilinis[i].pavarde << setw(20) << eilinis[i].vardas << setw(20) << setprecision(3) << eilinis[i].galVid << setw(20) << setprecision(2) << eilinis[i].galMed << endl;
         }
+}
+StudentasClass& StudentasClass::operatorEQUALS(const StudentasClass& gc1) {
+    if (this == &gc1)
+        return *this;
+    this->vardas = gc1.vardas;
+    this->pavarde = gc1.pavarde;
+    this->vidurkis = gc1.vidurkis;
+    this->egz = gc1.egz;
+    return *this;
 }

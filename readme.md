@@ -140,3 +140,9 @@
 
 1. Klasėje pridėtas pagrindinis konstruktorius ir destruktorius
 2. Pridėtas naudingas operatorių overloadinimas (<< - rezultatų išvedimo operatorius).
+
+### v1.5
+
+1. Pridėtas naujas studento klasei individualus operatorius EQUALS (v1.2 papildymas).
+2. Studento klasė (StudentasClass) dabar yra išvestinė klasė iš Zmogus bazinės klasės.
+3. Bazinė klasė Zmogus yra abstrakčioji klasė.

@@ -17,7 +17,6 @@ int main()
     chrono::time_point<chrono::system_clock> start, end;
     chrono::time_point<chrono::system_clock> startEvent, endEvent;
 
-    std::cout << "Ar norite generuoti failus ir atlikti skaiciavimus NAUDOJANT KLASES? (0 - ne, 1 - taip): "; // taip - v1.1
         /* Testing of vector */
         std::cout << "test of vector (class type): \n\n";
 
