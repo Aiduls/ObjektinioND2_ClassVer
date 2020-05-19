@@ -33,3 +33,7 @@
 
 # Repository link
 repo_linkas.txt
+
+#IDE files
+*.vscode
+

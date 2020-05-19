@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <algorithm>    // std::any_of
 #include <iomanip>      // std::setprecision
@@ -14,14 +14,7 @@
 
 using namespace std;
 
-struct Studentas {
-
-    string vardas = "", pavarde = "";
-      int n = 0;
-    vector<double> ND;
-    double egz = 0, galVid = 0, galMed = 0;
-};
-
+/// Tėvinė žmogaus klasė 
 class Zmogus {
 protected:
     string vardas;
@@ -31,6 +24,9 @@ public:
     virtual string getPavarde() = 0;
 };
 
+/// Dukterinė žmogaus klasė - Studentas
+///
+/// Joje aprašomi konkrečiai studento kintamieji
 class StudentasClass: public Zmogus {
 private:
     int ndKiekis;
@@ -66,40 +62,12 @@ public:
     double getGalutinis() const { return galutinis; }  
 };
 
-void isvedimas(vector<Studentas>& eilinis);
-bool compareByLength(const Studentas& a, const Studentas& b);
-string generuoti(vector<Studentas>& eilinis, int kiekis);
-void nuskaityti(vector<Studentas>& eilinis, int kiekis, string failas);
-void rusiuoti(vector<Studentas>& eilinis);
-bool maziau(const Studentas& a, const Studentas& b);
-void skirstyti(vector<Studentas>& eilinis, vector<Studentas> &pabiruciai, vector<Studentas> &protinguciai);
-void isvedimas(vector<Studentas> vektorius, string failoPav);
-void containerTesting(vector<Studentas>& pabiruciai, vector<Studentas>& protinguciai, vector<Studentas>& eilinis, int kiekis);
-void containerTesting(list<Studentas>& pabiruciai, list<Studentas>& protinguciai, list<Studentas>& eilinis, int kiekis);
-string generuoti(list<Studentas> eilinis, int kiekis);
-void nuskaityti(list<Studentas>& eilinis, int kiekis, string failas);
-void isvedimas(list<Studentas>& listas, string failoPav);
-void rusiuoti(list<Studentas>& eilinis);
-void containerTesting(deque<Studentas>& pabiruciai, deque<Studentas>& protinguciai, deque<Studentas>& eilinis, int kiekis);
-string generuoti(deque<Studentas> eilinis, int kiekis);
-void nuskaityti(deque<Studentas>& eilinis, int kiekis, string failas);
-void rusiuoti(deque<Studentas>& eilinis);
-void skirstyti(deque<Studentas>& eilinis, deque<Studentas>& pabiruciai, deque<Studentas>& protinguciai);
-void isvedimas(deque<Studentas> dekas, string failoPav);
-void skirstyti(list<Studentas>& eilinis, list<Studentas>& pabiruciai, list<Studentas>& protinguciai);
-bool compare_5(const Studentas& v);
-void skirstytiv2(vector<Studentas>& eilinis, vector<Studentas>& pabiruciai);
-void skirstytiv2(list<Studentas>& eilinis, list<Studentas>& pabiruciai);
-void skirstytiv2(deque<Studentas>& eilinis, deque<Studentas>& pabiruciai);
-void skirstytiv3(vector<Studentas>& eilinis, vector<Studentas>& pabiruciai);
-
 // nuo v1.1
 void containerTestingVector_Class(vector<StudentasClass>& pabiruciai, vector<StudentasClass>& eilinis, int kiekis);
 string generuoti_ForClass(int kiekis);
 void nuskaityti_ForClass(vector<StudentasClass>& eilinis, int kiekis, string failas);
 void rusiuoti_ForClass(vector<StudentasClass>& eilinis);
 void skirstytiv3_ForClass(vector<StudentasClass>& eilinis, vector<StudentasClass>& pabiruciai);
-void isvedimas_ForClass(vector<Studentas> vektorius, string failoPav);
 void calculateFinal_ForClass(vector<StudentasClass>& eilinis, int kiekis);
 void isvedimas_ForClass(vector<StudentasClass> vektorius, string failoPav);
 bool compare_5_ForClass(const StudentasClass& v);

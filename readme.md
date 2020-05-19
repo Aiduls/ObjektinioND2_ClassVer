@@ -2,24 +2,44 @@
 
 ### Diegimo instrukcija (Windows/Linux platformoms):
 
+#### Windows:
+
 1. Parsisiųskite naujausią release'ą
 
-2. Linux OS:
+2. Programai būtina 
 
-   1. Terminale parašykite komandą `make`
-   2. Jei naujai sukurtas Application paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju - komanda `chmod a+x hello`
+   [MinGW]: http://www.mingw.org/
 
-3. Windows OS, naudojant MinGW aplinką:
+   aplinka.
 
-   1. Terminale parašykite komandą ` mingw32-make `
+3. Programos paleidimui (terminale):
 
-4. Paleiskite programą komanda `./App` arba rankiniu būdu.
+   1. Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+   2. Parašykite komandą ` mingw32-make `  (sukompiliuoja ir sulinkina kodą)
+   3. Parašykite komandą ` mingw32-make run ` (paleidžia paleidžiamąjį failą)
 
-5. Norėdami išvalyti sukurtus failus naudokite komandą `make clean` (Linux OS) arba `mingw32-make clean` (Windows OS naudojant MinGW aplinką).
+4. Testų paleidimui (terminale):
 
-   Jei diegimas nepavyksta, po pirmo punkto reiktų susidėti naujausią main failą (ND2_x.x.cpp), func.cpp ir Header.h failus į naudojamo IDE projektą (rekomenduojama Visual Studio 2019, x64 versija) ir pasileisti taip.
+   1. Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+   2. Parašykite komandą ` mingw32-make test_unit `
+   3. Parašykite komandą ` mingw32-make run_tests `
 
+5. Norėdami išvalyti sukurtus failus naudokite komandą`mingw32-make clean` 
 
+#### Unix:
+
+1. Parsisiųskite naujausią release'ą
+2. Programos paleidimui (terminale):
+   1. Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+   2. Parašykite komandą ` make `  (sukompiliuoja ir sulinkina kodą)
+   3. Parašykite komandą `make run ` (paleidžia paleidžiamąjį failą)
+3. Testų paleidimui (terminale):
+   1. Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+   2. Parašykite komandą `make test_unit `
+   3. Parašykite komandą `make run_tests `
+4. Norėdami išvalyti sukurtus failus naudokite komandą `make clean` 
+
+Jei naujai sukurtas main paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju - komanda `chmod a+x main`
 
 ### Versijų registras:
 
@@ -146,3 +166,52 @@
 1. Pridėtas naujas studento klasei individualus operatorius EQUALS (v1.2 papildymas).
 2. Studento klasė (StudentasClass) dabar yra išvestinė klasė iš Zmogus bazinės klasės.
 3. Bazinė klasė Zmogus yra abstrakčioji klasė.
+
+### v2.0
+
+1. Programos dokumentacijai naudojamas Doxygen. Visus dokumentacijos failus galima rasti kataloge Doxygen. Norint atidaryti pagrindinį dokumentacijos puslapį, reikia atsidaryti index.html.
+
+2. Sukurti Unit Testai, naudojantis acutest.h Header failu.
+
+3. Atnaujinta programos bei testų instaliavimo ir paleidimo instrukcija: 
+
+   ### Diegimo instrukcija (Windows/Linux platformoms):
+
+   #### Windows:
+
+   1. Parsisiųskite naujausią release'ą
+
+   2. Programai būtina 
+
+      [MinGW]: http://www.mingw.org/
+
+      aplinka.
+
+   3. Programos paleidimui (terminale):
+
+      1. Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+      2. Parašykite komandą ` mingw32-make `  (sukompiliuoja ir sulinkina kodą)
+      3. Parašykite komandą ` mingw32-make run ` (paleidžia paleidžiamąjį failą)
+
+   4. Testų paleidimui (terminale):
+
+      1. Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+      2. Parašykite komandą ` mingw32-make test_unit `
+      3. Parašykite komandą ` mingw32-make run_tests `
+
+   5. Norėdami išvalyti sukurtus failus naudokite komandą`mingw32-make clean` 
+
+   #### Unix:
+
+   1. Parsisiųskite naujausią release'ą
+   2. Programos paleidimui (terminale):
+      1. Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+      2. Parašykite komandą ` make `  (sukompiliuoja ir sulinkina kodą)
+      3. Parašykite komandą `make run ` (paleidžia paleidžiamąjį failą)
+   3. Testų paleidimui (terminale):
+      1. Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+      2. Parašykite komandą `make test_unit `
+      3. Parašykite komandą `make run_tests `
+   4. Norėdami išvalyti sukurtus failus naudokite komandą `make clean` 
+
+   Jei naujai sukurtas main paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju - komanda `chmod a+x main`

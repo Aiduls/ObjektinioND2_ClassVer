@@ -1,10 +1,13 @@
-App: ND2_v1.5.o func.o
-	g++ ND2_v1.5.o func.o -o3 App
-
-ND2_v1.5.o: ND2_v1.5.cpp Header.h
-	g++ -c ND2_v1.5.cpp Header.h
-
-func.o: func.cpp Header.h
-	g++ -c func.cpp Header.h
-
-clean: rm *.o *.gch App
+main: func.o
+	g++ -o main main.cpp func.o
+test_unit: test_unit.o func.o
+	g++ -o test_unit test_unit.cpp func.o
+func:
+	g++ -c func.cpp
+	
+clean:
+	rm *.o main *.txt test_unit
+run:
+	./main
+run_tests: 
+	./test_unit
