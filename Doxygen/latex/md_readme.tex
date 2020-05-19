@@ -1,0 +1,228 @@
+\hypertarget{md_readme_autotoc_md1}{}\doxysubsection{Diegimo instrukcija (\+Windows/\+Linux platformoms)\+:}\label{md_readme_autotoc_md1}
+\hypertarget{md_readme_autotoc_md2}{}\doxysubsubsection{Windows\+:}\label{md_readme_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item Parsisiųskite naujausią release\textquotesingle{}ą
+\item Programai būtina
+
+aplinka.
+\item Programos paleidimui (terminale)\+:
+\begin{DoxyEnumerate}
+\item Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+\item Parašykite komandą {\ttfamily mingw32-\/make} (sukompiliuoja ir sulinkina kodą)
+\item Parašykite komandą {\ttfamily mingw32-\/make run} (paleidžia paleidžiamąjį failą)
+\end{DoxyEnumerate}
+\item Testų paleidimui (terminale)\+:
+\begin{DoxyEnumerate}
+\item Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+\item Parašykite komandą {\ttfamily mingw32-\/make test\+\_\+unit}
+\item Parašykite komandą {\ttfamily mingw32-\/make run\+\_\+tests}
+\end{DoxyEnumerate}
+\item Norėdami išvalyti sukurtus failus naudokite komandą{\ttfamily mingw32-\/make clean}
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md3}{}\doxysubsubsection{Unix\+:}\label{md_readme_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item Parsisiųskite naujausią release\textquotesingle{}ą
+\item Programos paleidimui (terminale)\+:
+\begin{DoxyEnumerate}
+\item Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+\item Parašykite komandą {\ttfamily make} (sukompiliuoja ir sulinkina kodą)
+\item Parašykite komandą {\ttfamily make run} (paleidžia paleidžiamąjį failą)
+\end{DoxyEnumerate}
+\item Testų paleidimui (terminale)\+:
+\begin{DoxyEnumerate}
+\item Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+\item Parašykite komandą {\ttfamily make test\+\_\+unit}
+\item Parašykite komandą {\ttfamily make run\+\_\+tests}
+\end{DoxyEnumerate}
+\item Norėdami išvalyti sukurtus failus naudokite komandą {\ttfamily make clean}
+\end{DoxyEnumerate}
+
+Jei naujai sukurtas main paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju -\/ komanda {\ttfamily chmod a+x main}\hypertarget{md_readme_autotoc_md4}{}\doxysubsection{Versijų registras\+:}\label{md_readme_autotoc_md4}
+\hypertarget{md_readme_autotoc_md5}{}\doxysubsection{v0.\+1\+:}\label{md_readme_autotoc_md5}
+
+\begin{DoxyEnumerate}
+\item Programa surenka žmogaus įrašytus duomenis\+: vardą, pavardę, namų darbų kiekį ir jų pažymius, egzamino pažymį.
+\item Programoje yra apsauga nuo neteisingo formato duomenų įvedimo, tad kai vietoj skaičius bus įvedamas simbolis, programa apie tai praneš ir lieps įvesti dar kartą, o ne \textquotesingle{}suluš\textquotesingle{}.
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md6}{}\doxysubsubsection{v0.\+1.\+1}\label{md_readme_autotoc_md6}
+
+\begin{DoxyEnumerate}
+\item Papildomai prie ankstesnių programos galimybių, dabar, vartotojui pasirinkus, studento pažymiai ir jų kiekiai gali būti sugeneruojami atsitiktinai
+\item Vietoje C masyvo naudojamas vektorius.
+\item Studento duomenys saugojami struktūroje.
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md7}{}\doxysubsection{v0.\+2}\label{md_readme_autotoc_md7}
+
+\begin{DoxyEnumerate}
+\item Dabar studentų duomenys taip pat gali būti nuskaitomi iš failo.
+\item Išvedamos visų studentų medianos bei vidurkiai.
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md8}{}\doxysubsection{v0.\+3}\label{md_readme_autotoc_md8}
+
+\begin{DoxyEnumerate}
+\item Naudojami exceptionai, try ir catch metodai.
+\item Programa suskirstyta į kelis failus\+: N\+D2 v0.\+3.\+cpp, kuris atlieka pagrindines funkcijas, funkcijų faila \mbox{\hyperlink{func_8cpp}{func.\+cpp}} ir antraščių failą \mbox{\hyperlink{_header_8h}{Header.\+h}} .
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md9}{}\doxysubsection{v0.\+4}\label{md_readme_autotoc_md9}
+
+\begin{DoxyEnumerate}
+\item Pasirinkus parinktį, programa automatiškai\+:
+\begin{DoxyEnumerate}
+\item Sugeneruos 5 studentų failus (1k, 10k, 100k, 1M, 10M failus);
+\item Nuskaitys iš failų duomenis į struktūras;
+\item Surūšiuos studentus pagal pažymius;
+\item Išskirstys studentus į pabiručius (vidurkis $<$ 5) ir protingučius (vidurkis $>$= 5);
+\item Išves atskirus pabiručių ir protingučių failus.
+\end{DoxyEnumerate}
+\item Norint pasileisti programą\+:
+\begin{DoxyEnumerate}
+\item Rekomenduojama tiesiog pasileisti \char`\"{}\+V\+S\+\_\+\+N\+D2.\+exe\char`\"{} failą. Nieko daugiau redaguoti nereikia.
+\item Taip pat galima susidėti 3 failus (N\+D2\+\_\+v0.\+4.\+cpp, \mbox{\hyperlink{func_8cpp}{func.\+cpp}}, \mbox{\hyperlink{_header_8h}{Header.\+h}}) į bendrą projektą ir jį pasileisti programavimo aplinkoje, pvz. Visual Studio 2019.
+\item Terminale pasigaminti (make) makefile\textquotesingle{}ą ir jį parunninti
+\end{DoxyEnumerate}
+\item Programos veikimo laiką kūrimo aplinkoje galima rasti nuotraukoje \char`\"{}konsolev0.\+4.\+png\char`\"{}
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md10}{}\doxysubsection{v0.\+5}\label{md_readme_autotoc_md10}
+
+\begin{DoxyEnumerate}
+\item Dabar duomenys talpinami ne tik vektoriuje, bet ir list bei deque konteineriuose.
+\item Skaičiuojami programos veikimo procesai atskirai kiekviename konteineryje (nuskaitymas, rusiavimas ir skirstymas, bendras apdorojimo laikas). Rezultatai, gauti ant testavimo sistemos, matomi faile konsolev0.\+5.\+png.
+\item Testavimo sistemos parametrai\+: C\+PU\+: Intel Core i7-\/9750H, 6 cores R\+AM\+: 16GB R\+AM, 1 Socket S\+SD\+: 512GB.
+\item Programa kurta ir testuota ant Windows 64bit platformos, MS Visual Studio x64. Rekomenduojama bandyti ant tokių pačių (x64) parametrų.
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md11}{}\doxysubsubsection{v0.\+5.\+1}\label{md_readme_autotoc_md11}
+
+\begin{DoxyEnumerate}
+\item Pataisyta 0.\+5 versija. Dabar programa kokybiškai apdoroja duomenis ir list, ir deque sąrašuose.
+\item Pridėtas programos procesų veikimo laiko screenshot\textquotesingle{}as -\/ konsolev0.\+5.\+png.
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md12}{}\doxysubsection{v1.\+0}\label{md_readme_autotoc_md12}
+
+\begin{DoxyEnumerate}
+\item Procesams vykdyti naudojamos dvi strategijos\+: iš bendro konteinerio išskirstyti į du papildomus ir iš bendro konteinerio išrinkti prastesnius, o bendrame palikti geresnius. Visi šie skirtumai laiko ir atminties atžvilgiu aprašyti additional\+Data/usage\+Data.\+txt faile, o papildomos nuotraukos su rezultatais yra additional\+Data aplanke.
+\item Vektorių konteineriuose skirstant studentus padidintas efektyvumas naudojant find\+\_\+if() ir iteratorius.
+\item Pridėtas Makefile, skirtas U\+N\+IX sistemoms.
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md13}{}\doxyparagraph{Diegimo instrukcija (\+U\+N\+I\+X platformoms)\+:}\label{md_readme_autotoc_md13}
+
+\begin{DoxyEnumerate}
+\item Parsisiųskite naujausią release\textquotesingle{}ą
+\item Terminale parašykite komandą {\ttfamily make}
+\item Jei naujai sukurtas Application paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju -\/ komanda {\ttfamily chmod a+x hello}
+\item Paleiskite programą komanda {\ttfamily ./\+Application} arba rankiniu būdu.
+\item Norėdami išvalyti sukurtus failus naudokite komandą {\ttfamily make clean}
+
+Jei diegimas nepavyksta ar programą norite pasileisti ant Windows platformos, po pirmo punkto reiktų susidėti N\+D2\+\_\+1.\+0.\+cpp, \mbox{\hyperlink{func_8cpp}{func.\+cpp}} ir \mbox{\hyperlink{_header_8h}{Header.\+h}} failus į naudojamo I\+DE projektą (rekomenduojama Visual Studio 2019, x64 versija) ir pasileisti taip.
+\end{DoxyEnumerate}
+
+{\bfseries{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---}}\hypertarget{md_readme_autotoc_md14}{}\doxysubsection{v1.\+1}\label{md_readme_autotoc_md14}
+
+\begin{DoxyEnumerate}
+\item Pridėta galimybė atlikti skaičiavimus vector konteineryje su klasėmis, o ne struktūromis.
+\item Programos veikimo laiko palyginimas tarp struktūrų vektorių ir klasių vektorių (kiekiai\+: 100k ir 1M duomenų)\+:
+\end{DoxyEnumerate}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Konteineriai \textbackslash{} Duomenų kiekis }&\cellcolor{\tableheadbgcolor}\textbf{ 100 k }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1M  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Konteineriai \textbackslash{} Duomenų kiekis }&\cellcolor{\tableheadbgcolor}\textbf{ 100 k }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1M  }\\\cline{1-3}
+\endhead
+Klasės &0,92s &9,09s  \\\cline{1-3}
+Struktūros &0,82s &8,17s  \\\cline{1-3}
+\end{longtabu}
+
+
+
+\begin{DoxyEnumerate}
+\item Naujosios programos veikimo laikai (sekundėmis) naudojant skirtingas optimizacijas\+:
+\end{DoxyEnumerate}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Optimizavimo flag\textquotesingle{}as \textbackslash{} duomenų kiekis }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 k }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1M  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Optimizavimo flag\textquotesingle{}as \textbackslash{} duomenų kiekis }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 k }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1M  }\\\cline{1-3}
+\endhead
+/\+O1 &0,89 &8,77  \\\cline{1-3}
+/\+O2 &0,9 &8,62  \\\cline{1-3}
+/\+Ox &0,88 &8,51  \\\cline{1-3}
+\end{longtabu}
+
+
+Papildomi nustatymai, naudoti visuose bandymuose\+: Release konfigūracija bei x64 platforma.\hypertarget{md_readme_autotoc_md15}{}\doxyparagraph{Diegimo instrukcija (\+Windows/\+Unix platformoms)\+:}\label{md_readme_autotoc_md15}
+
+\begin{DoxyEnumerate}
+\item Parsisiųskite naujausią release\textquotesingle{}ą
+\item Linux OS\+:
+\begin{DoxyEnumerate}
+\item Terminale parašykite komandą {\ttfamily make}
+\item Jei naujai sukurtas Application paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju -\/ komanda {\ttfamily chmod a+x hello}
+\end{DoxyEnumerate}
+\item Windows OS, naudojant Min\+GW aplinką\+:
+\begin{DoxyEnumerate}
+\item Terminale parašykite komandą {\ttfamily mingw32-\/make}
+\end{DoxyEnumerate}
+\item Paleiskite programą komanda {\ttfamily ./\+App} arba rankiniu būdu.
+\item Norėdami išvalyti sukurtus failus naudokite komandą {\ttfamily make clean} (Unix OS) arba {\ttfamily mingw32-\/make clean} (Windows OS naudojant Min\+GW aplinką).
+
+Jei diegimas nepavyksta, po pirmo punkto reiktų susidėti naujausią main failą (N\+D2\+\_\+x.\+x.\+cpp), \mbox{\hyperlink{func_8cpp}{func.\+cpp}} ir \mbox{\hyperlink{_header_8h}{Header.\+h}} failus į naudojamo I\+DE projektą (rekomenduojama Visual Studio 2019, x64 versija) ir pasileisti taip.
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md16}{}\doxysubsection{v1.\+2}\label{md_readme_autotoc_md16}
+
+\begin{DoxyEnumerate}
+\item Klasėje pridėtas pagrindinis konstruktorius ir destruktorius
+\item Pridėtas naudingas operatorių overloadinimas ($<$$<$ -\/ rezultatų išvedimo operatorius).
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md17}{}\doxysubsection{v1.\+5}\label{md_readme_autotoc_md17}
+
+\begin{DoxyEnumerate}
+\item Pridėtas naujas studento klasei individualus operatorius E\+Q\+U\+A\+LS (v1.\+2 papildymas).
+\item Studento klasė (\mbox{\hyperlink{class_studentas_class}{Studentas\+Class}}) dabar yra išvestinė klasė iš \mbox{\hyperlink{class_zmogus}{Zmogus}} bazinės klasės.
+\item Bazinė klasė \mbox{\hyperlink{class_zmogus}{Zmogus}} yra abstrakčioji klasė.
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md18}{}\doxysubsection{v2.\+0}\label{md_readme_autotoc_md18}
+
+\begin{DoxyEnumerate}
+\item Programos dokumentacijai naudojamas Doxygen. Visus dokumentacijos failus galima rasti kataloge Doxygen. Norint atidaryti pagrindinį dokumentacijos puslapį, reikia atsidaryti index.\+html.
+\item Sukurti Unit Testai, naudojantis acutest.\+h Header failu.
+\item Atnaujinta programos bei testų instaliavimo ir paleidimo instrukcija\+:
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md19}{}\doxysubsection{Diegimo instrukcija (\+Windows/\+Linux platformoms)\+:}\label{md_readme_autotoc_md19}
+\hypertarget{md_readme_autotoc_md20}{}\doxysubsubsection{Windows\+:}\label{md_readme_autotoc_md20}
+
+\begin{DoxyEnumerate}
+\item Parsisiųskite naujausią release\textquotesingle{}ą
+\item Programai būtina
+
+aplinka.
+\item Programos paleidimui (terminale)\+:
+\begin{DoxyEnumerate}
+\item Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+\item Parašykite komandą {\ttfamily mingw32-\/make} (sukompiliuoja ir sulinkina kodą)
+\item Parašykite komandą {\ttfamily mingw32-\/make run} (paleidžia paleidžiamąjį failą)
+\end{DoxyEnumerate}
+\item Testų paleidimui (terminale)\+:
+\begin{DoxyEnumerate}
+\item Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+\item Parašykite komandą {\ttfamily mingw32-\/make test\+\_\+unit}
+\item Parašykite komandą {\ttfamily mingw32-\/make run\+\_\+tests}
+\end{DoxyEnumerate}
+\item Norėdami išvalyti sukurtus failus naudokite komandą{\ttfamily mingw32-\/make clean}
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md21}{}\doxysubsubsection{Unix\+:}\label{md_readme_autotoc_md21}
+
+\begin{DoxyEnumerate}
+\item Parsisiųskite naujausią release\textquotesingle{}ą
+\item Programos paleidimui (terminale)\+:
+\begin{DoxyEnumerate}
+\item Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+\item Parašykite komandą {\ttfamily make} (sukompiliuoja ir sulinkina kodą)
+\item Parašykite komandą {\ttfamily make run} (paleidžia paleidžiamąjį failą)
+\end{DoxyEnumerate}
+\item Testų paleidimui (terminale)\+:
+\begin{DoxyEnumerate}
+\item Įsitikinkite, kad esate tame pačiame aplanke kaip ir source kodas
+\item Parašykite komandą {\ttfamily make test\+\_\+unit}
+\item Parašykite komandą {\ttfamily make run\+\_\+tests}
+\end{DoxyEnumerate}
+\item Norėdami išvalyti sukurtus failus naudokite komandą {\ttfamily make clean}
+\end{DoxyEnumerate}
+
+Jei naujai sukurtas main paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju -\/ komanda {\ttfamily chmod a+x main} 

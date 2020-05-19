@@ -1,0 +1,146 @@
+\hypertarget{_header_8h}{}\doxysection{src/\+Header.h File Reference}
+\label{_header_8h}\index{src/Header.h@{src/Header.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_zmogus}{Zmogus}}
+\begin{DoxyCompactList}\small\item\em Tėvinė žmogaus klasė \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}}
+\begin{DoxyCompactList}\small\item\em Dukterinė žmogaus klasė -\/ Studentas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_header_8h_a909a51cb43612fbca9d180f588e7a970}{container\+Testing\+Vector\+\_\+\+Class}} (vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&pabiruciai, vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&eilinis, int kiekis)
+\begin{DoxyCompactList}\small\item\em Vektoriaus klasės testavimas Iš šios pagrindinės funkcijos kviečiami visi kiti procesai kaip duomenų generavimas, sortinimas, išvedimas ir t.\+t. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{_header_8h_a5e3d34534fe16b28f47e88e77248a4db}{generuoti\+\_\+\+For\+Class}} (int kiekis)
+\begin{DoxyCompactList}\small\item\em Sugeneruoja studentų failą \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_header_8h_ae8fe6bf742e11d653ac6d01551679bea}{nuskaityti\+\_\+\+For\+Class}} (vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&eilinis, int kiekis, string failas)
+\begin{DoxyCompactList}\small\item\em Nuskaito sugeneruotą studentų failą \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_header_8h_ac51cc91aeb31d11a4c2cbb1b67ebd086}{rusiuoti\+\_\+\+For\+Class}} (vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&eilinis)
+\begin{DoxyCompactList}\small\item\em Surūšiuoja bendrą studentų sąrašą nuo prasčiausio pažymio iki geriausio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_header_8h_af25b5bf4bb5aab8e90ace725c216ffd1}{skirstytiv3\+\_\+\+For\+Class}} (vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&eilinis, vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&pabiruciai)
+\begin{DoxyCompactList}\small\item\em Išskirsto bendrą studentų sąrašą į prastesnių ir geresnių \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_header_8h_aa3510ef46297a0fbd00f7bfcc2656a3d}{calculate\+Final\+\_\+\+For\+Class}} (vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&eilinis, int kiekis)
+\begin{DoxyCompactList}\small\item\em Apskaičiuoja galutinį balą kiekvienam studentui. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_header_8h_a64f70470904b890aca7b068b630c8b74}{isvedimas\+\_\+\+For\+Class}} (vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ vektorius, string failo\+Pav)
+\begin{DoxyCompactList}\small\item\em Išveda paduotą studentų sarašą \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_header_8h_a3711806d2cd3d1fd82fb219b6dfacce5}{compare\+\_\+5\+\_\+\+For\+Class}} (const \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} \&v)
+\begin{DoxyCompactList}\small\item\em Funkcija, grąžinanti nuo kurio nr. studento prasideda vidurkiai, lygūs 5. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_header_8h_a79578f4ebfffe84453f6bcf859e594b2}{maziau\+\_\+\+For\+Class}} (const \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} \&a, const \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} \&b)
+\begin{DoxyCompactList}\small\item\em Loginė funkcija, nurodanti kuris iš duotų studentų turi mažesnį galutinį balą \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{_header_8h_a72ef225330304e7aa58138991ed07588}{operator$<$$<$}} (std\+::ostream \&offile, vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&vektorius)
+\begin{DoxyCompactList}\small\item\em Overloadintas operatorius, išvedantis visus studentus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_header_8h_aa3510ef46297a0fbd00f7bfcc2656a3d}\label{_header_8h_aa3510ef46297a0fbd00f7bfcc2656a3d}} 
+\index{Header.h@{Header.h}!calculateFinal\_ForClass@{calculateFinal\_ForClass}}
+\index{calculateFinal\_ForClass@{calculateFinal\_ForClass}!Header.h@{Header.h}}
+\doxysubsubsection{\texorpdfstring{calculateFinal\_ForClass()}{calculateFinal\_ForClass()}}
+{\footnotesize\ttfamily void calculate\+Final\+\_\+\+For\+Class (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&}]{eilinis,  }\item[{int}]{kiekis }\end{DoxyParamCaption})}
+
+
+
+Apskaičiuoja galutinį balą kiekvienam studentui. 
+
+\mbox{\Hypertarget{_header_8h_a3711806d2cd3d1fd82fb219b6dfacce5}\label{_header_8h_a3711806d2cd3d1fd82fb219b6dfacce5}} 
+\index{Header.h@{Header.h}!compare\_5\_ForClass@{compare\_5\_ForClass}}
+\index{compare\_5\_ForClass@{compare\_5\_ForClass}!Header.h@{Header.h}}
+\doxysubsubsection{\texorpdfstring{compare\_5\_ForClass()}{compare\_5\_ForClass()}}
+{\footnotesize\ttfamily bool compare\+\_\+5\+\_\+\+For\+Class (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Funkcija, grąžinanti nuo kurio nr. studento prasideda vidurkiai, lygūs 5. 
+
+\mbox{\Hypertarget{_header_8h_a909a51cb43612fbca9d180f588e7a970}\label{_header_8h_a909a51cb43612fbca9d180f588e7a970}} 
+\index{Header.h@{Header.h}!containerTestingVector\_Class@{containerTestingVector\_Class}}
+\index{containerTestingVector\_Class@{containerTestingVector\_Class}!Header.h@{Header.h}}
+\doxysubsubsection{\texorpdfstring{containerTestingVector\_Class()}{containerTestingVector\_Class()}}
+{\footnotesize\ttfamily void container\+Testing\+Vector\+\_\+\+Class (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&}]{pabiruciai,  }\item[{vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&}]{eilinis,  }\item[{int}]{kiekis }\end{DoxyParamCaption})}
+
+
+
+Vektoriaus klasės testavimas Iš šios pagrindinės funkcijos kviečiami visi kiti procesai kaip duomenų generavimas, sortinimas, išvedimas ir t.\+t. 
+
+\mbox{\Hypertarget{_header_8h_a5e3d34534fe16b28f47e88e77248a4db}\label{_header_8h_a5e3d34534fe16b28f47e88e77248a4db}} 
+\index{Header.h@{Header.h}!generuoti\_ForClass@{generuoti\_ForClass}}
+\index{generuoti\_ForClass@{generuoti\_ForClass}!Header.h@{Header.h}}
+\doxysubsubsection{\texorpdfstring{generuoti\_ForClass()}{generuoti\_ForClass()}}
+{\footnotesize\ttfamily string generuoti\+\_\+\+For\+Class (\begin{DoxyParamCaption}\item[{int}]{kiekis }\end{DoxyParamCaption})}
+
+
+
+Sugeneruoja studentų failą 
+
+\mbox{\Hypertarget{_header_8h_a64f70470904b890aca7b068b630c8b74}\label{_header_8h_a64f70470904b890aca7b068b630c8b74}} 
+\index{Header.h@{Header.h}!isvedimas\_ForClass@{isvedimas\_ForClass}}
+\index{isvedimas\_ForClass@{isvedimas\_ForClass}!Header.h@{Header.h}}
+\doxysubsubsection{\texorpdfstring{isvedimas\_ForClass()}{isvedimas\_ForClass()}}
+{\footnotesize\ttfamily void isvedimas\+\_\+\+For\+Class (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$}]{vektorius,  }\item[{string}]{failo\+Pav }\end{DoxyParamCaption})}
+
+
+
+Išveda paduotą studentų sarašą 
+
+\mbox{\Hypertarget{_header_8h_a79578f4ebfffe84453f6bcf859e594b2}\label{_header_8h_a79578f4ebfffe84453f6bcf859e594b2}} 
+\index{Header.h@{Header.h}!maziau\_ForClass@{maziau\_ForClass}}
+\index{maziau\_ForClass@{maziau\_ForClass}!Header.h@{Header.h}}
+\doxysubsubsection{\texorpdfstring{maziau\_ForClass()}{maziau\_ForClass()}}
+{\footnotesize\ttfamily bool maziau\+\_\+\+For\+Class (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Loginė funkcija, nurodanti kuris iš duotų studentų turi mažesnį galutinį balą 
+
+\mbox{\Hypertarget{_header_8h_ae8fe6bf742e11d653ac6d01551679bea}\label{_header_8h_ae8fe6bf742e11d653ac6d01551679bea}} 
+\index{Header.h@{Header.h}!nuskaityti\_ForClass@{nuskaityti\_ForClass}}
+\index{nuskaityti\_ForClass@{nuskaityti\_ForClass}!Header.h@{Header.h}}
+\doxysubsubsection{\texorpdfstring{nuskaityti\_ForClass()}{nuskaityti\_ForClass()}}
+{\footnotesize\ttfamily void nuskaityti\+\_\+\+For\+Class (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&}]{eilinis,  }\item[{int}]{kiekis,  }\item[{string}]{failas }\end{DoxyParamCaption})}
+
+
+
+Nuskaito sugeneruotą studentų failą 
+
+\mbox{\Hypertarget{_header_8h_a72ef225330304e7aa58138991ed07588}\label{_header_8h_a72ef225330304e7aa58138991ed07588}} 
+\index{Header.h@{Header.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Header.h@{Header.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{offile,  }\item[{vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&}]{vektorius }\end{DoxyParamCaption})}
+
+
+
+Overloadintas operatorius, išvedantis visus studentus. 
+
+\mbox{\Hypertarget{_header_8h_ac51cc91aeb31d11a4c2cbb1b67ebd086}\label{_header_8h_ac51cc91aeb31d11a4c2cbb1b67ebd086}} 
+\index{Header.h@{Header.h}!rusiuoti\_ForClass@{rusiuoti\_ForClass}}
+\index{rusiuoti\_ForClass@{rusiuoti\_ForClass}!Header.h@{Header.h}}
+\doxysubsubsection{\texorpdfstring{rusiuoti\_ForClass()}{rusiuoti\_ForClass()}}
+{\footnotesize\ttfamily void rusiuoti\+\_\+\+For\+Class (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&}]{eilinis }\end{DoxyParamCaption})}
+
+
+
+Surūšiuoja bendrą studentų sąrašą nuo prasčiausio pažymio iki geriausio. 
+
+\mbox{\Hypertarget{_header_8h_af25b5bf4bb5aab8e90ace725c216ffd1}\label{_header_8h_af25b5bf4bb5aab8e90ace725c216ffd1}} 
+\index{Header.h@{Header.h}!skirstytiv3\_ForClass@{skirstytiv3\_ForClass}}
+\index{skirstytiv3\_ForClass@{skirstytiv3\_ForClass}!Header.h@{Header.h}}
+\doxysubsubsection{\texorpdfstring{skirstytiv3\_ForClass()}{skirstytiv3\_ForClass()}}
+{\footnotesize\ttfamily void skirstytiv3\+\_\+\+For\+Class (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&}]{eilinis,  }\item[{vector$<$ \mbox{\hyperlink{class_studentas_class}{Studentas\+Class}} $>$ \&}]{pabiruciai }\end{DoxyParamCaption})}
+
+
+
+Išskirsto bendrą studentų sąrašą į prastesnių ir geresnių 
+
