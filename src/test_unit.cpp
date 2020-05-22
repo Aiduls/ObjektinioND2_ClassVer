@@ -1,53 +1,60 @@
 #include "acutest.h"
 #include "Header.h"
 
-StudentasClass studentasClass();
-vector<StudentasClass> eilinisClass;
+    /// setValues() testas
+    ///
+    /// Testas, skirtas patikrinti ar teisingai priskiriamos reikšmės klasei - vardas
+    void test_setVardas(void) {
+        StudentasClass studentasClass;
+        vector<StudentasClass> eilinisClass;
 
-/// setValues() testas
-///
-/// Testas, skirtas patikrinti ar teisingai priskiriamos reikšmės klasei
-void test_setValues(void){
+        eilinisClass.clear();
+        eilinisClass.push_back(studentasClass);
 
-    eilinisClass[0].setValues("Kvailelis", "Testauskas", 2, 3);
+        eilinisClass[0].setValues("Kvailelis", "Testauskas", 2, 3);
 
-    TEST_CHECK(eilinisClass[0].getVardas() == "Kvailelis");
-    TEST_CHECK(eilinisClass[0].getPavarde() == "Testauskas");
-}
+        TEST_CHECK(eilinisClass[0].getVardas() == "Kvailelis");
+    }
 
-/// setGalutinis() testas
-///
-/// Testas, skirtas patikrinti ar teisingai apskaičiuojamas ir priskiriamas galutinis balas
-void test_setGalutinis(void){
+    /// setValues() testas
+    ///
+    /// Testas, skirtas patikrinti ar teisingai priskiriamos reikšmės klasei - pavarde
+    void test_setPavarde(void) {
+        StudentasClass studentasClass;
+        vector<StudentasClass> eilinisClass;
 
-    eilinisClass[0].setValues("Kvailelis", "Testauskas", 2, 3);
+        eilinisClass.clear();
+        eilinisClass.push_back(studentasClass);
 
-    eilinisClass[0].setGalutinis();
-    // Galutinis pažymys, kai vidurkis = 2, o egzaminas = 3, turi būti 
-    // galutinis = 0.4 * vidurkis + 0.6 * egz = 0.4 * 2 + 0.6 * 3 = 2.6
+        eilinisClass[0].setValues("Kvailelis", "Testauskas", 2, 3);
 
-    TEST_CHECK(eilinisClass[0].getGalutinis() == 2.6);
-}
+        TEST_CHECK(eilinisClass[0].getPavarde() == "Testauskas");
+    }
 
-/// maziau_ForClass() testas
-///
-/// Testas, skirtas patikrinti ar teisingai apskaičiuojama, kurio studento galutinis pažymys didesnis
-void test_maziau(void){
+    /// maziau_ForClass() testas
+    ///
+    /// Testas, skirtas patikrinti ar teisingai apskaičiuojama, kurio studento galutinis pažymys didesnis
+    void test_maziau(void) {
+        StudentasClass studentasClass;
+        vector<StudentasClass> eilinisClass;
 
-    eilinisClass[0].setValues("Kvailelis", "Testauskas", 2, 3);
-    eilinisClass[1].setValues("Protingas", "Testauskas", 10, 9);
-    eilinisClass[0].setGalutinis();
-    eilinisClass[1].setGalutinis();
+        eilinisClass.clear();
+        eilinisClass.push_back(studentasClass);
+        eilinisClass.push_back(studentasClass);
 
-    bool arMaziau = maziau_ForClass(eilinisClass[0],eilinisClass[1]);
+        eilinisClass[0].setValues("Kvailelis", "Testauskas", 2, 3);
+        eilinisClass[1].setValues("Protingas", "Testauskas", 10, 9);
+        eilinisClass[0].setGalutinis();
+        eilinisClass[1].setGalutinis();
 
-    TEST_CHECK(arMaziau == true);
-}
+        bool arMaziau = maziau_ForClass(eilinisClass[0], eilinisClass[1]);
 
-TEST_LIST = {
-    {"setValues()_tikrinimas;", test_setValues },
-    {"setGalutinis()_tikrinimas;", test_setGalutinis },
-    {"maziau()_tikrinimas;", test_maziau },
-    {0}
-};
+        TEST_CHECK(arMaziau == true);
+    }
 
+    TEST_LIST = {
+        {"setVardas()_tikrinimas;", test_setVardas },
+        {"setPavarde()_tikrinimas;", test_setPavarde },
+        {"maziau()_tikrinimas;", test_maziau },
+        {0}
+    };
