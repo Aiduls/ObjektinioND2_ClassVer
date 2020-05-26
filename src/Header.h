@@ -26,19 +26,28 @@ class StudentasClass {
 private:
     string vardas;
     string pavarde;
-    int ndKiekis;
+    int ndKiekis = 0;
     vector<double> ND;
     int egz;
-    double vidurkis, galutinis;
+    double vidurkis, galutinis = 0;
 
 public:
     // konstruktoriai
     StudentasClass() { 
         setValues("", "", 0, 0); 
     }
+
+    StudentasClass(string vardas, string pavarde, double vidurkis, double egz) {
+        setValues(vardas, pavarde, vidurkis, egz);
+    }
+    // priskyrimo opratorius
+    StudentasClass& operatorASSIGN(const StudentasClass& that);
     
     // destruktoriai
     ~StudentasClass() {}
+
+    // kopijavimo operatorius
+    StudentasClass(const StudentasClass& that) : vardas(that.vardas), pavarde(that.pavarde), vidurkis(that.vidurkis), egz(that.egz), galutinis(that.galutinis) {}
 
     // setteriai
     void setValues(std::string vardas, std::string pavarde, double vidurkis, double egz) {

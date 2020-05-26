@@ -140,3 +140,9 @@
 
 1. Klasėje pridėtas pagrindinis konstruktorius ir destruktorius
 2. Pridėtas naudingas operatorių overloadinimas (<< - rezultatų išvedimo operatorius).
+
+### v1.2.1
+
+1. Papildyta rule of three tasiyklė:
+   1. Pridėtas kopijavimo konstruktorius;
+   2. Pridėtas priskyrimo operatorius ASSIGN.

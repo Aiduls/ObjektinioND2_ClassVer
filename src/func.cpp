@@ -667,3 +667,13 @@ void isvedimas(vector<Studentas>& eilinis)
             offile << left << setw(20) << eilinis[i].pavarde << setw(20) << eilinis[i].vardas << setw(20) << setprecision(3) << eilinis[i].galVid << setw(20) << setprecision(2) << eilinis[i].galMed << endl;
         }
 }
+StudentasClass& StudentasClass::operatorASSIGN (const StudentasClass& that) {
+    if (this == &that)
+        return *this;
+    this->vardas = that.vardas;
+    this->pavarde = that.pavarde;
+    this->vidurkis = that.vidurkis;
+    this->egz = that.egz;
+    this->galutinis = that.galutinis;
+    return *this;
+}
