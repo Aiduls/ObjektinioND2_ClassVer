@@ -195,12 +195,13 @@ void isvedimas_ForClass(vector<StudentasClass> vektorius, string failoPav = "rez
 }
 
 /// Overloadintas operatorius, prilyginantis dabartiniam studentui paduotus duomenis
-StudentasClass& StudentasClass::operatorEQUALS(const StudentasClass& gc1) {
-    if (this == &gc1)
+StudentasClass& StudentasClass::operatorASSIGN(const StudentasClass& that) {
+    if (this == &that)
         return *this;
-    this->vardas = gc1.vardas;
-    this->pavarde = gc1.pavarde;
-    this->vidurkis = gc1.vidurkis;
-    this->egz = gc1.egz;
+    this->vardas = that.vardas;
+    this->pavarde = that.pavarde;
+    this->vidurkis = that.vidurkis;
+    this->egz = that.egz;
+    this->galutinis = that.galutinis;
     return *this;
 }
