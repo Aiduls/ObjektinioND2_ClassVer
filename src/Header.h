@@ -43,7 +43,8 @@ public:
     // destruktoriai
     ~StudentasClass() {}
 
-    StudentasClass& operatorEQUALS(const StudentasClass& gc1);
+    // priskyrimo opratorius
+    StudentasClass& operatorASSIGN(const StudentasClass& that);
 
     // setteriai
     void setValues(std::string vardas, std::string pavarde, double vidurkis, double egz) {
