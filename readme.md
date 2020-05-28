@@ -161,6 +161,12 @@ Jei naujai sukurtas main paleidžiamasis failas nepasileidžia, Terminale padary
 1. Klasėje pridėtas pagrindinis konstruktorius ir destruktorius
 2. Pridėtas naudingas operatorių overloadinimas (<< - rezultatų išvedimo operatorius).
 
+### v1.2.1
+
+1. Papildyta rule of three taisyklė:
+   1. Pridėtas kopijavimo konstruktorius;
+   2. Pridėtas priskyrimo operatorius ASSIGN.
+
 ### v1.5
 
 1. Pridėtas naujas studento klasei individualus operatorius EQUALS (v1.2 papildymas).
@@ -215,3 +221,22 @@ Jei naujai sukurtas main paleidžiamasis failas nepasileidžia, Terminale padary
    4. Norėdami išvalyti sukurtus failus naudokite komandą `make clean` 
 
    Jei naujai sukurtas main paleidžiamasis failas nepasileidžia, Terminale padarykite jį paleidžiamuoju - komanda `chmod a+x main`
+
+#### v3.0 - Savo Vector klasės kūrimas
+
+1. Vektoriaus funkcijos:
+   1. `push_back()` - prideda naują elementą (iš dešinės);
+   2. `assign()` - Priskiria elementą į tam tikrą vietą;
+   3. `size()` - gauna vektoriaus elementų skaičių
+   4. `reserve()` - rezervuoja vietą tam tikram skaičiui elementų
+   5. `pop_back()` - ištrina paskutinį elementą
+
+2. Vektorių spartumo lyginimas (sekundėmis, vidutiniškai):
+
+   | **Vektoriai\ dydis** | 10 000   | 100 000  | 1 000 000 | 10 000 000 |
+   | -------------------- | -------- | -------- | --------- | ---------- |
+   | std::vector<int>     | 0,001927 | 0,003559 | 0,023422  | 0,2353573  |
+   | Vector<int>          | 0,002014 | 0,003786 | 0,025081  | 0,2668041  |
+
+   
+

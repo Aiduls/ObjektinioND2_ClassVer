@@ -3,6 +3,7 @@
 #include <iostream>
 #include <memory>
 #include <algorithm>
+#include <vector>
 
 //using namespace std;
 
@@ -43,11 +44,20 @@ public:
 	// size() gavimas
 	size_type size() const { return limit - data; }
 
+	// rezervuoja vieta
+	void reserve(const size_t capacity);
+
+	// istrina paskutini elementa
+	void pop_back();
+
+
 	// Iteratoriu grazinimas
 	iterator begin() { return data; }
 	const_iterator begin() const { return data; }
 	iterator end() { return limit; }
 	const_iterator end() const { return limit; }
+
+
 
 private:
 	iterator data;	// pirmasis Vector elementas
@@ -159,4 +169,19 @@ template <class T> void Vector<T>::push_back(const T& val) {
 	if (avail == limit) 
 		grow();				   // jei reikia, isskiriama vietos
 	unchecked_append(val); // ideda nauja elementa
+}
+
+template<class T>
+void Vector<T>::reserve(const size_t capacity)
+{
+	if (capacity > capacity_) {
+		reserve_(capacity);
+	}
+}
+
+template<class T>
+void Vector<T>::pop_back()
+{
+	elem_[size_] = 0;
+	size_--;
 }
